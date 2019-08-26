@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+# newspaper_project/settings.py
+CRISPY_TEMPLATE_PACK = 'bootstrap'
 
 # Application definition
 
@@ -39,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
+    # 3rd party
+    'crispy_forms',
 ]
 
 
@@ -126,3 +130,4 @@ AUTH_USER_MODEL = 'users.CustomUser'
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
+
