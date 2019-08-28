@@ -131,4 +131,16 @@ AUTH_USER_MODEL = 'users.CustomUser'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# newspaper_project/settings.py
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = 'smtp.sendgrid.net'
+
+EMAIL_HOST_USER = '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'
+
+EMAIL_HOST_PASSWORD = '8511885660a'
+
+EMAIL_PORT = 587
+
+EMAIL_USE_TLS = True
