@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from django.urls import reverse_lazy
@@ -29,7 +30,12 @@ class ArticleDeleteView(DeleteView):
 
 
 
-class ArticleCreateView(CreateView):
+class ArticleCreateView(LoginRequiredMixin , CreateView):
     model = Article
     template_name = 'article_new.html'
-    fields = ('title', 'body', 'author',)
+    fields = ('title', 'body')
+    login_url = 'login'
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
