@@ -5,29 +5,31 @@ from django.urls import reverse_lazy
 from .models import Article
 # Create your views here.
 
-class ArticleListView(ListView):
+class ArticleListView(LoginRequiredMixin, ListView):
     model = Article
     template_name = 'article_list.html'
+    login_url = 'login'
 
 
-class ArticleDetailView(DetailView):
+class ArticleDetailView(LoginRequiredMixin, DetailView):
     model = Article
     template_name = 'article_detail.html'
+    login_url = 'login'
 
 
-
-class ArticleUpdateView(UpdateView):
+class ArticleUpdateView(LoginRequiredMixin, UpdateView):
     model = Article
     fields = ('title', 'body',)
     template_name = 'article_edit.html'
+    login_url = 'login'
 
 
 
-class ArticleDeleteView(DeleteView):
+class ArticleDeleteView(LoginRequiredMixin, DeleteView):
     model = Article
     template_name = 'article_delete.html'
     success_url = reverse_lazy('article_list')
-
+    login_url = 'login'
 
 
 class ArticleCreateView(LoginRequiredMixin , CreateView):
