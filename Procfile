@@ -1,0 +1,1 @@
+web: gunicorn news_project:app --log-file=-
