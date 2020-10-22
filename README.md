@@ -18,7 +18,12 @@
 
 
 [GitHub](https://github.com/aakashpadhiyar)
+    .
 [AboutMe](https://about.me/aakashpadhiyar)
+    .
 [LinkedIn](https://www.linkedin.com/in/aakashpadhiyar/)
+    .
 [Instagram](https://www.lnstagram.com/_aakashpadhiyar)
+    .
 [GitHub-2](https://github.com/8140171224)
+
